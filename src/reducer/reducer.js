@@ -31,6 +31,11 @@ const reducer = (state = defaultState, action) => {
                 ...state,
                 records: action.editedRecords,
             };
+        case 'ADD_RECORD':
+            return {
+                ...state,
+                records: state.records.concat(action.newRecord),
+            }
         default:
             return state;
     }

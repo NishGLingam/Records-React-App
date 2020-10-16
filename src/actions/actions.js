@@ -8,4 +8,9 @@ const editRecord = (editedRecords) => ({
     editedRecords,
 })
 
-export { deleteRecord, editRecord };
+const addRecord = (newRecord) => ({
+    type: 'ADD_RECORD',
+    newRecord,
+})
+
+export { deleteRecord, editRecord, addRecord };
