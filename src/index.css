@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.table-style{
+  border: 2px black solid; 
+  width: 1000px; 
+}
+
+.table-header {
+  display: flex;
+  background-color: rgb(205, 216, 255);
+}
+
+.table-header > div {
+  border: 2px black solid;
+  padding: 5px;
+  width: 200px;
+}
+
+.table-row {
+  display: flex;
+}
+
+.table-row > div {
+  border: 1px black solid;
+  border-left: 2px black solid;;
+  border-right: 2px black solid;;
+  padding: 5px;
+  width: 200px;
+}
+
+.edit-modal {
+  z-index: 1;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+}
