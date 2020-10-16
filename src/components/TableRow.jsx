@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 
 import EditModal from './EditModal';
 
-const TableRow = ({ record, edit, deleter, submitHandler }) => {
+const TableRow = ({ record, deleter }) => {
 
     const [modalActive, setModalActive] = useState(false)
-
-    const showModal = () => setModalActive(true);
+    
+    const modalHandler = () => setModalActive(!modalActive);
 
     return (
         <div>
             <div>
-                {modalActive && <EditModal record = {record} submitHandler = {submitHandler}/>}
+               <EditModal record = {record} modalActive ={modalActive} modalHandler={modalHandler}/>
             </div>
             <div className="table-row">
                 <div>
@@ -29,7 +29,7 @@ const TableRow = ({ record, edit, deleter, submitHandler }) => {
                 <div>
                     {record.department}
                 </div>
-                <div onClick = {showModal}>
+                <div onClick = {modalHandler}>
                     Edit
                 </div>
                 <div onClick = {deleter}>

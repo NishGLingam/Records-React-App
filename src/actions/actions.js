@@ -3,9 +3,9 @@ const deleteRecord = (i) => ({
     i,
 });
 
-const editRecord = (i) => ({
+const editRecord = (editedRecords) => ({
     type: 'EDIT_RECORD',
-    i,
+    editedRecords,
 })
 
 export { deleteRecord, editRecord };

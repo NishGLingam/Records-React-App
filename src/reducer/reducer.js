@@ -25,7 +25,12 @@ const reducer = (state = defaultState, action) => {
             return {
                 ...state,
                 records: state.records.filter(records => records.ninumber !== action.i.ninumber)
-            }
+            };
+        case 'EDIT_RECORD':
+            return {
+                ...state,
+                records: action.editedRecords,
+            };
         default:
             return state;
     }

@@ -10,10 +10,6 @@ const Table = () => {
 
     const records = useSelector(state => state.records);
 
-    const editHandler = (i) => {
-        console.log(i);
-    }
-
     return (
         <div className="table-style">
             <div className="table-header">
@@ -39,7 +35,8 @@ const Table = () => {
                 Delete
             </div>
             </div>
-            {records.map((x, i) => <TableRow key = {i}  record={x} edit={() => editHandler(x)} deleter={() => dispatch(deleteRecord(x))}/>)}
+            {records.map((x, index) => <TableRow key={index}  record={x} deleter={() => dispatch(deleteRecord(x))}/>)}
+            <button onClick={() => console.log(records)}> Tester </button>
         </div>
     )
 };
