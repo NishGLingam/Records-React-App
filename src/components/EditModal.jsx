@@ -38,7 +38,8 @@ const EditModal = ( { record, modalActive, modalHandler }) => {
                 Phone No: <input type = 'text' defaultValue = {record.phone} id='phone' onChange={event => setPhone(event.target.value)}/>                 
                 Address:  <input type = 'text' defaultValue = {record.address} id='address' onChange={event => setAddress(event.target.value)}/>                 
                 Department:  <input type = 'text' defaultValue = {record.department} id='department' onChange={event => setDepartment(event.target.value)}/> 
-                <input type = 'submit' value = 'Submit' />                
+                <input type = 'submit' value = 'Submit' /> 
+                <div onClick={modalHandler}> &#10006; </div>                  
             </form>
     )
 }
