@@ -21,5 +21,11 @@ const addFilter = (newFilter) => ({
 const removeFilter = (oldFilter) => ({
     type: 'REMOVE_FILTER',
     oldFilter,
-})
-export { deleteRecord, editRecord, addRecord, addFilter, removeFilter };
+});
+
+
+const clearFilter = () => ({
+    type: 'CLEAR_FILTER'
+});
+
+export { deleteRecord, editRecord, addRecord, addFilter, removeFilter, clearFilter };

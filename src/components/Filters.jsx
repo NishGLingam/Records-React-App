@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFilter, removeFilter } from '../actions/actions';
+import { addFilter, removeFilter, clearFilter } from '../actions/actions';
 
 const Filters = () => {
 
@@ -13,15 +13,15 @@ const Filters = () => {
         } else {
             dispatch(removeFilter(filter));
         }
-        
     }
 
     return (
         <div>
             Filters 
             <button onClick={() => filterHandler("Sales")} className = {filters.indexOf("Sales") === -1 ? 'inactive-filter' : 'active-filter'}> Sales </button>
-            <button onClick={() => filterHandler("IT")}> IT </button>
-            <button onClick={() => filterHandler("HR")}> HR </button>
+            <button onClick={() => filterHandler("IT")} className = {filters.indexOf("Sales") === -1 ? 'inactive-filter' : 'active-filter'}> IT </button>
+            <button onClick={() => filterHandler("HR")} className = {filters.indexOf("Sales") === -1 ? 'inactive-filter' : 'active-filter'}> HR </button>
+            <button onClick ={() => dispatch(clearFilter())}> Clear </button>
         </div>
     )
 

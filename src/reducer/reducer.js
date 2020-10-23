@@ -46,6 +46,11 @@ const reducer = (state = defaultState, action) => {
             return {
                 ...state,
                 filters: state.filters.filter(filter => filter !== action.oldFilter),
+            };
+        case 'CLEAR_FILTER':
+            return {
+                ...state,
+                filters: [],
             }
         default:
             return state;
