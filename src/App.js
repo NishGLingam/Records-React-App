@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
@@ -13,9 +13,12 @@ const store = createStore(reducer);
 function App() {
   return (
     <Provider store = {store}>
-      <Table />
-      <AddRecord />
-      <Filters />
+      <div className = "app-container">
+        <h1> Shafeeq's Record Database </h1>
+        <Filters />
+        <Table />
+        <AddRecord />
+      </div>
     </Provider>
   );
 }

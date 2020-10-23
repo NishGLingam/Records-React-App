@@ -16,11 +16,11 @@ const Filters = () => {
     }
 
     return (
-        <div>
-            Filters 
-            <button onClick={() => filterHandler("Sales")} className = {filters.indexOf("Sales") === -1 ? 'inactive-filter' : 'active-filter'}> Sales </button>
-            <button onClick={() => filterHandler("IT")} className = {filters.indexOf("Sales") === -1 ? 'inactive-filter' : 'active-filter'}> IT </button>
-            <button onClick={() => filterHandler("HR")} className = {filters.indexOf("Sales") === -1 ? 'inactive-filter' : 'active-filter'}> HR </button>
+        <div className = 'filters-container'>
+            Filters:
+            <button onClick={() => filterHandler("Sales")} className = {filters.indexOf("Sales") === -1 ? 'inactive-filter filter' : 'active-filter filter'}> Sales </button>
+            <button onClick={() => filterHandler("IT")} className = {filters.indexOf("IT") === -1 ? 'inactive-filter filter' : 'active-filter filter'}> IT </button>
+            <button onClick={() => filterHandler("HR")} className = {filters.indexOf("HR") === -1 ? 'inactive-filter filter' : 'active-filter filter'}> HR </button>
             <button onClick ={() => dispatch(clearFilter())}> Clear </button>
         </div>
     )

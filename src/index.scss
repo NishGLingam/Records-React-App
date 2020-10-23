@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+button {
+  font-family: 'Nunito', sans-serif;
+}
+
 .table-container {
   display: flex;
   flex-direction: column;
@@ -26,12 +30,16 @@ code {
 .table-header {
   display: flex;
   background-color: rgb(205, 216, 255);
+  font-size: 16px;
+
 }
 
 .table-header > div {
   border: 2px black solid;
   padding: 5px;
   width: 200px;
+  display: flex;
+  justify-content: center;
 }
 
 .table-row {
@@ -44,6 +52,9 @@ code {
   border-right: 2px black solid;;
   padding: 5px;
   width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .edit-modal {
@@ -63,10 +74,44 @@ code {
   justify-content: center;
 }
 
+.filter {
+  border: 1px solid black; 
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 10px;
+  margin: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
 .inactive-filter {
-  background-color: blue;
+  background-color: white;
+  &:hover {
+    background-color: rgb(215, 224, 255);
+  }
 }
 
 .active-filter {
-  background-color: red;
+  background-color: rgb(189, 203, 255);
+  &:hover {
+    background-color: rgb(228, 234, 255);
+  }
+}
+
+.filters-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-record {
+  border: 1px solid black; 
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  background-color: rgb(224, 224, 224);
+  margin: 20px;
 }

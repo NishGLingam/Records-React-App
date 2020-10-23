@@ -35,7 +35,7 @@ const AddRecord = () => {
 
     return (
         <div className = 'add-record-container'>
-            <button onClick = {modalHandler}>
+            <button className = 'add-record' onClick = {modalHandler}>
                 Add a record
             </button>
             {showModal && 

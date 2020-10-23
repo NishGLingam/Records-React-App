@@ -13,7 +13,6 @@ const Table = () => {
 
     return (
         <div className="table-container">
-            <h1> Shafeeq's Record Database </h1>
             <div className="table-style">
             <div className="table-header">
                 <div>
