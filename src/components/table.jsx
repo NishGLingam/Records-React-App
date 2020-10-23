@@ -9,9 +9,12 @@ const Table = () => {
     const dispatch = useDispatch();
 
     const records = useSelector(state => state.records);
+    const filters = useSelector(state => state.filters);
 
     return (
-        <div className="table-style">
+        <div className="table-container">
+            <h1> Shafeeq's Record Database </h1>
+            <div className="table-style">
             <div className="table-header">
                 <div>
                     NI Number
@@ -35,8 +38,17 @@ const Table = () => {
                 Delete
             </div>
             </div>
-            {records.map((x, index) => <TableRow key={index}  record={x} deleter={() => dispatch(deleteRecord(x))}/>)}
-            <button onClick={() => console.log(records)}> Tester </button>
+            {records.map((x, index) => {
+                if (filters.length === 0) {
+                    return <TableRow key={index}  record={x} deleter={() => dispatch(deleteRecord(x))}/>
+                }
+                else if (filters.indexOf(x.department) !== -1) {
+                    return <TableRow key={index}  record={x} deleter={() => dispatch(deleteRecord(x))}/>
+                }
+            })
+            }
+            <button onClick={() => console.log(filters)}> tester </button>
+            </div>
         </div>
     )
 };

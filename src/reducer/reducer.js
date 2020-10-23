@@ -17,6 +17,7 @@ const defaultState = {
         {"ninumber":"SW098272B", "fullname": "Felix Cited", "phone": "07394-529507", "address": "32 Banningham Court", "department":"Sales"},
         {"ninumber":"OB043941D", "fullname": "Sandy Beech", "phone": "07958-301691", "address": "3 Third Mount", "department":"Sales"}
     ],
+    filters: [],
 }
 
 const reducer = (state = defaultState, action) => {
@@ -35,6 +36,16 @@ const reducer = (state = defaultState, action) => {
             return {
                 ...state,
                 records: state.records.concat(action.newRecord),
+            };
+        case 'ADD_FILTER':
+            return {
+                ...state,
+                filters: state.filters.concat(action.newFilter),
+            };
+        case 'REMOVE_FILTER':
+            return {
+                ...state,
+                filters: state.filters.filter(filter => filter !== action.oldFilter),
             }
         default:
             return state;

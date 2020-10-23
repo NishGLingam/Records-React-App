@@ -34,10 +34,10 @@ const AddRecord = () => {
     }
 
     return (
-        <div>
-            <div onClick = {modalHandler}>
-                Add
-            </div>
+        <div className = 'add-record-container'>
+            <button onClick = {modalHandler}>
+                Add a record
+            </button>
             {showModal && 
             <form className = 'edit-modal' onSubmit = {addHandler}> 
                 NI Number: <input type = 'text'  id='ninumber' onChange={event => setNinumber(event.target.value)}/>

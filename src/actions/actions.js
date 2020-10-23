@@ -6,11 +6,20 @@ const deleteRecord = (i) => ({
 const editRecord = (editedRecords) => ({
     type: 'EDIT_RECORD',
     editedRecords,
-})
+});
 
 const addRecord = (newRecord) => ({
     type: 'ADD_RECORD',
     newRecord,
-})
+});
 
-export { deleteRecord, editRecord, addRecord };
+const addFilter = (newFilter) => ({
+    type: 'ADD_FILTER',
+    newFilter
+});
+
+const removeFilter = (oldFilter) => ({
+    type: 'REMOVE_FILTER',
+    oldFilter,
+})
+export { deleteRecord, editRecord, addRecord, addFilter, removeFilter };
