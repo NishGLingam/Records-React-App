@@ -29,11 +29,15 @@ const TableRow = ({ record, deleter, index }) => {
                 <div>
                     {record.department}
                 </div>
-                <div onClick = {modalHandler}>
-                    Edit
-                </div>
-                <div onClick = {deleter}>
-                    Delete
+                <div>
+                    <button className = "table-button" onClick = {modalHandler}>
+                        Edit
+                    </button>
+                </div>              
+                <div>
+                    <button className = "table-button" onClick = {deleter}>
+                        Delete
+                    </button>
                 </div>
             </div>
         </div>

@@ -14,41 +14,38 @@ const Table = () => {
     return (
         <div className="table-container">
             <div className="table-style">
-            <div className="table-header">
-                <div>
-                    NI Number
+                <div className="table-header">
+                    <div>
+                        NI Number
+                    </div>
+                    <div>
+                        Full Name
+                    </div>
+                    <div>
+                        Phone Number
+                    </div>
+                    <div>
+                        Address
+                    </div>
+                    <div>
+                        Department
+                    </div>
+                    <div>
+                    </div>
+                    <div>
+                    </div>
                 </div>
-                <div>
-                    Full Name
-                </div>
-                <div>
-                    Phone Number
-                </div>
-                <div>
-                    Address
-                </div>
-                <div>
-                    Department
-                </div>
-                <div>
-                Edit
-            </div>
-            <div>
-                Delete
-            </div>
-            </div>
-            <div className="table-row-container">
-            {records.map((x, index) => {
-                if (filters.length === 0) {
-                    return <TableRow key={index} index={index} record={x} deleter={() => dispatch(deleteRecord(x))}/>
+                <div className="table-row-container">
+                {records.map((x, index) => {
+                    if (filters.length === 0) {
+                        return <TableRow key={index} index={index} record={x} deleter={() => dispatch(deleteRecord(x))}/>
+                    }
+                    else if (filters.indexOf(x.department) !== -1) {
+                        return <TableRow key={index}  index={index}  record={x} deleter={() => dispatch(deleteRecord(x))}/>
+                    }
+                })
                 }
-                else if (filters.indexOf(x.department) !== -1) {
-                    return <TableRow key={index}  record={x} deleter={() => dispatch(deleteRecord(x))}/>
-                }
-            })
-            }
-            </div>
-            <button onClick={() => console.log(filters)}> tester </button>
+                </div>
             </div>
         </div>
     )

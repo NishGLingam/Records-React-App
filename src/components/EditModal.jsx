@@ -32,15 +32,20 @@ const EditModal = ( { record, modalActive, modalHandler }) => {
     }
 
     return (
-            modalActive && <form className = 'edit-modal' onSubmit = {submitHandler}> 
-                NI Number: <input type = 'text' defaultValue = {record.ninumber} id='ninumber' onChange={event => setNinumber(event.target.value)}/>
-                Full Name: <input type = 'text' defaultValue = {record.fullname} id='fullname' onChange={event => setFullname(event.target.value)}/>                 
-                Phone No: <input type = 'text' defaultValue = {record.phone} id='phone' onChange={event => setPhone(event.target.value)}/>                 
-                Address:  <input type = 'text' defaultValue = {record.address} id='address' onChange={event => setAddress(event.target.value)}/>                 
-                Department:  <input type = 'text' defaultValue = {record.department} id='department' onChange={event => setDepartment(event.target.value)}/> 
-                <input type = 'submit' value = 'Submit' /> 
-                <div onClick={modalHandler}> &#10006; </div>                  
-            </form>
+            modalActive && 
+            <div>
+                <div className='modal-overlay'> 
+                </div>
+                <form className = 'edit-modal' onSubmit = {submitHandler}> 
+                    <span className = 'close-modal' onClick={modalHandler}> &#10006; </span>    
+                    <div> NI Number: <input type = 'text' defaultValue = {record.ninumber} id='ninumber' onChange={event => setNinumber(event.target.value)}/> </div>
+                    <div> Full Name: <input type = 'text' defaultValue = {record.fullname} id='fullname' onChange={event => setFullname(event.target.value)}/> </div>                 
+                    <div> Phone No: <input type = 'text' defaultValue = {record.phone} id='phone' onChange={event => setPhone(event.target.value)}/> </div>                 
+                    <div> Address:  <input type = 'text' defaultValue = {record.address} id='address' onChange={event => setAddress(event.target.value)}/>                  </div>
+                    <div> Department:  <input type = 'text' defaultValue = {record.department} id='department' onChange={event => setDepartment(event.target.value)}/>  </div>
+                    <input className='add-record' type = 'submit' value = 'Submit' />               
+                </form>
+            </div>
     )
 }
 

@@ -19,11 +19,12 @@ const Filters = () => {
     }
 
     return (
-        <div className = 'filters-container'>
-            Filters:
-
-            {[...departments].map(dept  => <button className = {filters.indexOf(dept) === -1 ? 'inactive-filter filter' : 'active-filter filter'} onClick={() => filterHandler(dept) }> {filters.indexOf(dept) !== -1 && <span> x </span>} {dept} </button>)}
-            <button onClick ={() => dispatch(clearFilter())}> Clear </button>
+        <div className = "filters-container">
+            <button className = "clear-filters add-record" onClick ={() => dispatch(clearFilter())}> Clear </button>
+            <div>
+                Filters:
+                {[...departments].map(dept  => <button className = {filters.indexOf(dept) === -1 ? 'inactive-filter filter' : 'active-filter filter'} onClick={() => filterHandler(dept) }> {filters.indexOf(dept) !== -1 && <span> x </span>} {dept} </button>)}     
+             </div>
         </div>
     )
 

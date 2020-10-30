@@ -7,13 +7,15 @@ import AddRecord from './AddRecord';
 
 const Topsection = () => {
     return (
-        <div>
+        <div className="top-section">
             <h1> Shafeeq's Records Database </h1>
-            <Filters />
-            <AddRecord  />
+            <div className = "space-between">
+                <Filters />
+                <AddRecord  />
+            </div>
         </div>
     )
 
 }
 
-export default Topsection;
+export default Topsection
