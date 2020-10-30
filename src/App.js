@@ -5,8 +5,7 @@ import { createStore } from 'redux';
 
 import reducer from './reducer/reducer'
 import Table from './components/Table';
-import AddRecord from './components/AddRecord';
-import Filters from './components/Filters';
+import TopSection from './components/TopSection';
 
 const store = createStore(reducer);
 
@@ -14,10 +13,8 @@ function App() {
   return (
     <Provider store = {store}>
       <div className = "app-container">
-        <h1> Shafeeq's Record Database </h1>
-        <Filters />
+        <TopSection />
         <Table />
-        <AddRecord />
       </div>
     </Provider>
   );

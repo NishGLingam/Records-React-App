@@ -37,15 +37,17 @@ const Table = () => {
                 Delete
             </div>
             </div>
+            <div className="table-row-container">
             {records.map((x, index) => {
                 if (filters.length === 0) {
-                    return <TableRow key={index}  record={x} deleter={() => dispatch(deleteRecord(x))}/>
+                    return <TableRow key={index} index={index} record={x} deleter={() => dispatch(deleteRecord(x))}/>
                 }
                 else if (filters.indexOf(x.department) !== -1) {
                     return <TableRow key={index}  record={x} deleter={() => dispatch(deleteRecord(x))}/>
                 }
             })
             }
+            </div>
             <button onClick={() => console.log(filters)}> tester </button>
             </div>
         </div>

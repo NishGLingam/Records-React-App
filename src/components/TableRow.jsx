@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import EditModal from './EditModal';
 
-const TableRow = ({ record, deleter }) => {
+const TableRow = ({ record, deleter, index }) => {
 
     const [modalActive, setModalActive] = useState(false)
     
@@ -13,7 +13,7 @@ const TableRow = ({ record, deleter }) => {
             <div>
                <EditModal record = {record} modalActive ={modalActive} modalHandler={modalHandler}/>
             </div>
-            <div className="table-row">
+            <div className={index % 2 === 0 ? "table-row white-row" : "table-row blue-row"}>
                 <div>
                     {record.ninumber}
                 </div>

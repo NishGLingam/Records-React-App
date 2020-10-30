@@ -22,9 +22,8 @@ const Filters = () => {
         <div className = 'filters-container'>
             Filters:
 
-            {[...departments].map(dept  => <button className = {filters.indexOf("Sales") === -1 ? 'inactive-filter filter' : 'active-filter filter'} onClick={() => filterHandler(dept) }> {dept} </button>)}
+            {[...departments].map(dept  => <button className = {filters.indexOf(dept) === -1 ? 'inactive-filter filter' : 'active-filter filter'} onClick={() => filterHandler(dept) }> {filters.indexOf(dept) !== -1 && <span> x </span>} {dept} </button>)}
             <button onClick ={() => dispatch(clearFilter())}> Clear </button>
-            <button onClick= {() => console.log(departments)}> kundi</button>
         </div>
     )
 

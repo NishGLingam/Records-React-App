@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(240, 240, 240)
 }
 
 code {
@@ -12,8 +13,12 @@ code {
     monospace;
 }
 
-button {
+h1, button {
   font-family: 'Nunito', sans-serif;
+}
+
+span {
+  font-weight: normal;
 }
 
 .table-container {
@@ -23,38 +28,48 @@ button {
 }
 
 .table-style{
-  border: 2px black solid; 
   width: 1000px; 
 }
 
 .table-header {
   display: flex;
-  background-color: rgb(205, 216, 255);
+  background-color: #6c7ae0;
   font-size: 16px;
-
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+  padding: 15px 5px;
 }
 
 .table-header > div {
-  border: 2px black solid;
   padding: 5px;
   width: 200px;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+}
+
+.table-row-container {
+  height: 70vh;
+  overflow-y: scroll;
 }
 
 .table-row {
   display: flex;
+  padding: 10px 5px;
+}
+
+.blue-row {
+  background-color: rgb(249, 246, 255);
+}
+
+.white-row {
+  background-color: rgb(255, 255, 255);
 }
 
 .table-row > div {
-  border: 1px black solid;
-  border-left: 2px black solid;;
-  border-right: 2px black solid;;
   padding: 5px;
   width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .edit-modal {
